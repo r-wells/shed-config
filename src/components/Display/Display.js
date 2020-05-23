@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import Title from "../Title/Title";
+import "./Display.css";
 import Image from "../Image/Image";
+import ImageSelect from "./../ImageSelect/ImageSelect";
 
 class Display extends Component {
   state = {};
   render() {
     return (
-      <React.Fragment>
-        <Title titleText="Mod Shed Configurator" />
+      <div className="DisplayContainer">
         <Image />
-      </React.Fragment>
+        {/* <ImageSelect /> */}
+      </div>
     );
   }
 }

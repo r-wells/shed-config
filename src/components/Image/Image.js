@@ -1,10 +1,8 @@
 import React from "react";
-import RenderedImage from "../../images/cementboard.png";
+import "./Image.css";
 
 const Image = () => {
-  return <img src="code/src/images/cementboard-glass.png" />;
-  //   return <RenderedImage />;
-  //   return <div>{RenderedImage}</div>;
+  return <div className="Image" />;
 };
 
 export default Image;
