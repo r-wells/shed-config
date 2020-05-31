@@ -2,12 +2,26 @@ import React from "react";
 import "./SelectionComponent.css";
 import Image from "../../../images/selection-component-square.png";
 
-const SelectionComponent = ({ label, price }) => {
+const SelectionComponent = ({
+  type,
+  label,
+  price,
+  clickEvent,
+  selectedValue,
+}) => {
+  // let displayChecked = selectedValue === label ? true : false;
+
   return (
     <div className="SelectionComponent">
       <img src={Image} />
       <label className="SelectionComponentLabel">{label}</label>
-      <input type="radio" />
+      <input
+        type="radio"
+        name={type}
+        value="1000"
+        // checked={displayChecked}
+        onClick={clickEvent}
+      />
       <p className="SelectionComponentPrice">{price}</p>
     </div>
   );

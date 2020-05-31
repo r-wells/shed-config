@@ -14,3 +14,9 @@
 .Button:hover {
   cursor: pointer;
 }
+
+@media only screen and (max-width: 405px) {
+  .Button {
+    margin-top: 5px;
+  }
+}

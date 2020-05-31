@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-const Estimate = () => {
+const Estimate = ({ estimateValue }) => {
+  console.log("estimateValue", estimateValue);
   return (
-    <p>
-      Your Estimate is: <span style={{ fontWeight: "bold" }}>$8000</span>
-    </p>
+    <div>
+      Your Estimate is:{" "}
+      <span style={{ fontWeight: "bold" }}>${estimateValue}</span>
+    </div>
   );
 };
 

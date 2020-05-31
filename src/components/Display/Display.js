@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "./Display.css";
-import Image from "../Image/Image";
-import ImageSelect from "./../ImageSelect/ImageSelect";
+// import Image from "../Image/Image";
+import Image from "../../images/cementboard.png";
 
 class Display extends Component {
   state = {};
   render() {
     return (
       <div className="DisplayContainer">
-        <Image />
-        {/* <ImageSelect /> */}
+        <img src={Image} />
       </div>
     );
   }

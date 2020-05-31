@@ -1,73 +1,88 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
-
 import Container from "./components/Container/Container";
 import Title from "./components/Title/Title";
 import Display from "./components/Display/Display";
 import Button from "./components/Button/Button";
 import Dropdown from "./components/Dropdown/Dropdown";
 
-function App() {
-  return (
-    <div className="App">
-      <Container
-        key="1"
-        style={{
-          width: "60%",
-          margin: "0 auto",
-          display: "flex",
-          justifyContent: "space-between",
-          height: "100vh",
-          flexDirection: "row",
-          flexWrap: "wrap",
-        }}
-      >
-        <Container
-          key="2"
-          style={{ width: "60%", alignItems: "center", height: "100%" }}
-        >
-          <Title titleText="ModShed Series Configurator" />
-          <Display />
-        </Container>
-        <Container
-          key="3"
-          style={{
-            marginLeft: "2%",
-            width: "38%",
-            alignItems: "center",
-            height: "100%",
-          }}
-        >
-          <Container
-            key="4"
-            style={{
-              display: "flex",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-            }}
-          >
-            <Button onClick={"#"} buttonText="Add To Wishlist" />
-            <Button onClick={"#"} buttonText="Checkout" />
+class App extends Component {
+  state = {
+    inputTypes: [
+      "Size",
+      "Interior",
+      "Exterior",
+      "Siding",
+      "Colors",
+      "Services",
+    ],
+    selectedInputsValue: {
+      Size: 0,
+      Interior: 0,
+      Exterior: 0,
+      Siding: 0,
+      Colors: 0,
+      Services: 0,
+    },
+    estimate: 0,
+  };
+
+  dropdownClickHandler = (e) => {
+    const { selectedInputsValue } = this.state;
+    const type = e.target.name;
+    const amount = e.target.value;
+    // this.setState({ selectedInputsValue.type: amount })
+    let estimate = 0;
+    for (let val in selectedInputsValue) {
+      estimate += selectedInputsValue[val];
+    }
+    console.log("type", type);
+    console.log("type", type);
+    console.log("amount", amount);
+    console.log(selectedInputsValue);
+    console.log(selectedInputsValue[type]);
+
+    this.setState({ estimate });
+  };
+
+  render() {
+    const { inputTypes } = this.state;
+    return (
+      <div className="App">
+        <Container key="1" classes="AppContainer">
+          <Container key="2" classes="LeftContainer">
+            <Title titleText="ModShed Series Configurator" />
+            <Display />
           </Container>
-          <Container key="5" style={{ marginTop: "10px" }}>
-            <Dropdown innerText="1. Choose your size" type="Size" />
-            <Dropdown innerText="2. Choose your interior" type="Interior" />
-            <Dropdown
-              innerText="3. Choose your exterior layout"
-              type="Exterior"
-            />
-            <Dropdown innerText="4. Choose your siding" type="Siding" />
-            <Dropdown innerText="5. Choose your colors" type="Colors" />
-            <Dropdown
-              innerText="6. Choose your services and foundation"
-              type="Services"
-            />
-            <Dropdown innerText="Your Estimate" type="Estimate" />
+          <Container key="3" classes="RightContainer">
+            <Container key="4" classes="buttonContainer">
+              <Button onClick={"#"} buttonText="Add To Wishlist" />
+              <Button onClick={"#"} buttonText="Checkout" />
+            </Container>
+            <Container key="5" classes="DropdownContainer">
+              {inputTypes.map((input) => {
+                return (
+                  <Dropdown
+                    clickEvent={this.dropdownClickHandler}
+                    innerText={`Choose Your ${input}`}
+                    type={input}
+                    key={input}
+                  />
+                );
+              })}
+              <Dropdown
+                key="Estimate"
+                estimateValue={this.state.estimate}
+                clickEvent={this.dropdownClickHandler}
+                innerText="Your Estimate"
+                type="Estimate"
+              />
+            </Container>
           </Container>
         </Container>
-      </Container>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
