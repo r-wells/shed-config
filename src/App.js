@@ -5,6 +5,7 @@ import Title from "./components/Title/Title";
 import Display from "./components/Display/Display";
 import Button from "./components/Button/Button";
 import Dropdown from "./components/Dropdown/Dropdown";
+import Pricing from "./assets/pricing.json";
 
 class App extends Component {
   state = {
@@ -25,10 +26,13 @@ class App extends Component {
     estimate: 0,
   };
 
-  dropdownClickHandler = (e) => {
-    const type = e.target.name;
-    const amount = e.target.value;
-  };
+  componentDidMount() {
+    console.log("Pricing", Pricing["Size"]);
+  }
+
+  setPricing() {
+    console.log("setPricing");
+  }
 
   render() {
     const { inputTypes } = this.state;
@@ -48,7 +52,7 @@ class App extends Component {
               {inputTypes.map((input) => {
                 return (
                   <Dropdown
-                    clickEvent={this.dropdownClickHandler}
+                    clickEvent={this.setPricing}
                     innerText={`Choose Your ${input}`}
                     type={input}
                     key={input}

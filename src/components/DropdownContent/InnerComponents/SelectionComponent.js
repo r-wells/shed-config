@@ -9,8 +9,6 @@ const SelectionComponent = ({
   clickEvent,
   selectedValue,
 }) => {
-  // let displayChecked = selectedValue === label ? true : false;
-
   return (
     <div className="SelectionComponent">
       <img src={Image} />
