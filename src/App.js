@@ -5,7 +5,7 @@ import Title from "./components/Title/Title";
 import Display from "./components/Display/Display";
 import Button from "./components/Button/Button";
 import Dropdown from "./components/Dropdown/Dropdown";
-import Pricing from "./json/pricing.json";
+import Pricing from "./assets/pricing.json";
 
 class App extends Component {
   state = {
