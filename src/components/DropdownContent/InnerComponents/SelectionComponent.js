@@ -13,13 +13,7 @@ const SelectionComponent = ({
     <div className="SelectionComponent">
       <img src={Image} />
       <label className="SelectionComponentLabel">{label}</label>
-      <input
-        type="radio"
-        name={type}
-        value="1000"
-        // checked={displayChecked}
-        onClick={clickEvent}
-      />
+      <input type="radio" name={type} value="1000" onClick={clickEvent} />
       <p className="SelectionComponentPrice">{price}</p>
     </div>
   );

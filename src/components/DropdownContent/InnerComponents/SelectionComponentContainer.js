@@ -3,46 +3,26 @@ import SelectionComponent from "./SelectionComponent";
 import "./SelectionComponentContainer.css";
 import Container from "./../../Container/Container";
 import Estimate from "./Estimate";
+import { getInitialData, getPricingOptions } from "../../../utils/api";
 
 const SelectionComponentContainer = ({ type, clickEvent }) => {
+  console.log("type", type);
+  const data = getInitialData(type);
+  console.log("data", data);
+
   return (
     <Container classes="SelectionComponentContainer">
-      <SelectionComponent
-        clickEvent={clickEvent}
-        label="Label"
-        price="$1,000"
-        type={type}
-      />
-      <SelectionComponent
-        clickEvent={clickEvent}
-        label="Label"
-        price="$1,000"
-        type={type}
-      />
-      <SelectionComponent
-        clickEvent={clickEvent}
-        label="Label"
-        price="$1,000"
-        type={type}
-      />
-      <SelectionComponent
-        clickEvent={clickEvent}
-        label="Label"
-        price="$1,000"
-        type={type}
-      />
-      <SelectionComponent
-        clickEvent={clickEvent}
-        label="Label"
-        price="$1,000"
-        type={type}
-      />
-      <SelectionComponent
-        clickEvent={clickEvent}
-        label="Label"
-        price="$1,000"
-        type={type}
-      />
+      {data.map((option) => {
+        return (
+          <SelectionComponent
+            key={option.id}
+            clickEvent={clickEvent}
+            label={option.name}
+            price={option.price}
+            type={type}
+          />
+        );
+      })}
     </Container>
   );
 };
