@@ -18,7 +18,7 @@ export function getInitialData(key) {
   const data = {
     Siding: getSidingOptions(),
     Interior: getInteriorOptions(),
-    Size: getSizeOptions(),
+    Sizing: getSizeOptions(),
     Exterior: getExteriorOptions(),
     Services: getServicesOptions(),
     Colors: getColorOptions(),
@@ -30,7 +30,7 @@ export function getPricingOptions(key) {
   return {
     Siding: getSidingPrice,
     Interior: getInteriorPrice,
-    Size: getFlooringPrice,
+    Sizing: getFlooringPrice,
     Exterior: getExteriorPrice,
     Services: getServicesPrice,
     Colors: getColorPrice,

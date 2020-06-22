@@ -10,14 +10,14 @@ import Pricing from "./json/pricing.json";
 class App extends Component {
   state = {
     inputTypes: [
-      "Size",
+      "Sizing",
       "Interior",
       "Exterior",
       "Siding",
       "Colors",
       "Services",
     ],
-    Size: 0,
+    Sizing: 0,
     Interior: 0,
     Exterior: 0,
     Siding: 0,
@@ -27,7 +27,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("Pricing", Pricing["Size"]);
+    // console.log("Pricing", Pricing["Size"]);
   }
 
   setPricing() {
@@ -45,8 +45,12 @@ class App extends Component {
           </Container>
           <Container key="3" classes="RightContainer">
             <Container key="4" classes="buttonContainer">
-              <Button onClick={"#"} buttonText="Add To Wishlist" />
-              <Button onClick={"#"} buttonText="Checkout" />
+              <Button
+                onClick={"#"}
+                buttonText="Add To Wishlist"
+                classes={"Button"}
+              />
+              <Button onClick={"#"} buttonText="Checkout" classes={"Button"} />
             </Container>
             <Container key="5" classes="DropdownContainer">
               {inputTypes.map((input) => {

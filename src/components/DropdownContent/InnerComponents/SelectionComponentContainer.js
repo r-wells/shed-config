@@ -1,25 +1,57 @@
-import React from "react";
+import React, { useState, setState } from "react";
 import SelectionComponent from "./SelectionComponent";
 import "./SelectionComponentContainer.css";
 import Container from "./../../Container/Container";
-import Estimate from "./Estimate";
+import SizeContent from "../SizeContent/SizeContent";
 import { getInitialData, getPricingOptions } from "../../../utils/api";
 
 const SelectionComponentContainer = ({ type, clickEvent }) => {
-  console.log("type", type);
+  const [multiple, setMultiple] = React.useState(false);
+  const [total, setTotal] = React.useState(0);
+  const [totalSquareFootage, setTotalSquareFootage] = React.useState(8 * 8);
   const data = getInitialData(type);
-  console.log("data", data);
 
-  return (
+  const setSquareFootageHandler = (option) => {
+    setTotalSquareFootage(option.length * option.width);
+    setTotal(option.price);
+  };
+
+  const setValueHandler = (e, perSquareFoot) => {
+    const price = Number(e.target.value);
+    if (perSquareFoot) {
+      setTotal(price * totalSquareFootage);
+    } else {
+      setTotal(Number(e.target.value));
+    }
+  };
+
+  return type === "Sizing" ? (
+    <SizeContent
+      data={data}
+      multiple={false}
+      type={type}
+      clickEvent={setSquareFootageHandler}
+    />
+  ) : (
     <Container classes="SelectionComponentContainer">
       {data.map((option) => {
+        // console.log("-----", option.name, "-----");
+        // console.log(
+        //   "option.price_per_sf !== undefined",
+        //   option.price_per_sf !== undefined
+        // );
         return (
           <SelectionComponent
             key={option.id}
-            clickEvent={clickEvent}
+            value={
+              option.price ? Number(option.price) : Number(option.price_per_sf)
+            }
+            clickEvent={setValueHandler}
             label={option.name}
-            price={option.price}
+            price={option.price ? option.price : option.price_per_sf}
             type={type}
+            multiple={multiple}
+            perSquareFoot={option.price_per_sf !== undefined}
           />
         );
       })}

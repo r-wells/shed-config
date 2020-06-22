@@ -1,7 +1,23 @@
 .SelectionComponentContainer {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.SelectionComponentMultipleContainers {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+}
+
+.SelectionComponentMultipleContainersNotDisplayed {
+  display: none;
+}
+
+.SelectionButtonContainer {
+  border-radius: 5%;
+  width: 100%;
 }

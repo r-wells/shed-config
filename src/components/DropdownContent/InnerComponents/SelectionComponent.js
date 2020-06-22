@@ -7,14 +7,30 @@ const SelectionComponent = ({
   label,
   price,
   clickEvent,
-  selectedValue,
+  value,
+  multiple,
+  perSquareFoot,
 }) => {
   return (
     <div className="SelectionComponent">
       <img src={Image} />
       <label className="SelectionComponentLabel">{label}</label>
-      <input type="radio" name={type} value="1000" onClick={clickEvent} />
-      <p className="SelectionComponentPrice">{price}</p>
+      {multiple ? (
+        <input
+          type="checkbox"
+          name={type}
+          value={value}
+          onClick={(e) => clickEvent(e, perSquareFoot)}
+        />
+      ) : (
+        <input
+          type="radio"
+          name={type}
+          value={value}
+          onClick={(e) => clickEvent(e, perSquareFoot)}
+        />
+      )}
+      <p className="SelectionComponentPrice">${price}</p>
     </div>
   );
 };
