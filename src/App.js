@@ -5,7 +5,6 @@ import Title from "./components/Title/Title";
 import Display from "./components/Display/Display";
 import Button from "./components/Button/Button";
 import Dropdown from "./components/Dropdown/Dropdown";
-import Pricing from "./json/pricing.json";
 
 class App extends Component {
   state = {
@@ -17,22 +16,66 @@ class App extends Component {
       "Colors",
       "Services",
     ],
-    Sizing: 0,
-    Interior: 0,
-    Exterior: 0,
-    Siding: 0,
-    Colors: 0,
-    Services: 0,
+    totalSquareFootage: 0,
+    types: {
+      Sizing: 0,
+      Interior: 0,
+      Exterior: 0,
+      Siding: 0,
+      Colors: 0,
+      Services: 0,
+    },
     estimate: 0,
   };
 
+  setEstimate = () => {
+    const types = this.state.types;
+    console.log("types", types);
+    let estimate = 0;
+    for (let type in types) {
+      estimate += types[type];
+    }
+    console.log("estimate", estimate);
+    this.setState(
+      {
+        estimate,
+      },
+      () => console.log("this.state.estimate", this.state.estimate)
+    );
+  };
+
   componentDidMount() {
+    const sizing = "Sizing";
+    // console.log(this.state[sizing]);
     // console.log("Pricing", Pricing["Size"]);
   }
 
-  setPricing() {
+  setPricing = (type, price) => {
     console.log("setPricing");
-  }
+    const stateObj = this.state;
+    stateObj.types[type] = price;
+    this.setState(
+      {
+        ...stateObj,
+      },
+      () => console.log("state", this.state)
+    );
+    this.setEstimate();
+  };
+
+  setSquareFootageEvent = (totalSquareFootage, ppsf) => {
+    console.log("setSquareFootageEvent");
+    const stateObj = this.state;
+    stateObj.types["Sizing"] = totalSquareFootage * ppsf;
+    stateObj[totalSquareFootage] = totalSquareFootage;
+    this.setState(
+      {
+        stateObj,
+      },
+      () => console.log("state in set square footage event", this.state)
+    );
+    this.setEstimate();
+  };
 
   render() {
     const { inputTypes } = this.state;
@@ -56,7 +99,8 @@ class App extends Component {
               {inputTypes.map((input) => {
                 return (
                   <Dropdown
-                    clickEvent={this.setPricing}
+                    setPriceEvent={this.setPricing}
+                    setSquareFootageEvent={this.setSquareFootageEvent}
                     innerText={`Choose Your ${input}`}
                     type={input}
                     key={input}
@@ -69,6 +113,7 @@ class App extends Component {
                 clickEvent={this.dropdownClickHandler}
                 innerText="Your Estimate"
                 type="Estimate"
+                typesValues={this.state.types}
               />
             </Container>
           </Container>

@@ -4,7 +4,14 @@ import DropdownContent from "../DropdownContent/DropdownContent";
 import Estimate from "./../DropdownContent/InnerComponents/Estimate";
 import SelectionComponentContainer from "./../DropdownContent/InnerComponents/SelectionComponentContainer";
 
-const Dropdown = ({ innerText, type, clickEvent, estimateValue }) => {
+const Dropdown = ({
+  innerText,
+  type,
+  setPriceEvent,
+  estimateValue,
+  setSquareFootageEvent,
+  typesValues,
+}) => {
   const [display, setDisplay] = useState(false);
 
   return (
@@ -15,9 +22,13 @@ const Dropdown = ({ innerText, type, clickEvent, estimateValue }) => {
       </a>
       <DropdownContent display={display}>
         {type === "Estimate" ? (
-          <Estimate estimateValue={estimateValue} />
+          <Estimate estimateValue={estimateValue} typesValues={typesValues} />
         ) : (
-          <SelectionComponentContainer type={type} clickEvent={clickEvent} />
+          <SelectionComponentContainer
+            type={type}
+            setPriceEvent={setPriceEvent}
+            setSquareFootageEvent={setSquareFootageEvent}
+          />
         )}
       </DropdownContent>
     </div>

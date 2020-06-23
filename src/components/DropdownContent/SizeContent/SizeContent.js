@@ -5,7 +5,7 @@ import Container from "./../../Container/Container";
 import Button from "../../Button/Button";
 import { FLOORING_PSF } from "./../../../utils/_DATA";
 
-const SizeContent = ({ data, type, clickEvent, multiple }) => {
+const SizeContent = ({ data, type, clickEvent, multiple, setPriceEvent }) => {
   const divs = ["eight", "ten", "twelve"];
   const [displayedDiv, setDisplayedDiv] = useState("eight");
 
@@ -16,7 +16,7 @@ const SizeContent = ({ data, type, clickEvent, multiple }) => {
       const divContainer = document.getElementById(`size-${div}`);
       setDisplayedDiv(divContainer);
     });
-    console.log(e.value);
+    setPriceEvent();
   };
 
   return (

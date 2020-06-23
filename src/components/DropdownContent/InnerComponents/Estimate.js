@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Estimate = ({ estimateValue }) => {
-  console.log("estimateValue", estimateValue);
+const Estimate = ({ estimateValue, typesValues }) => {
+  console.log("typesValues", typesValues);
   return (
     <div>
       Your Estimate is:{" "}

@@ -14,7 +14,6 @@ import {
 } from "./_DATA";
 
 export function getInitialData(key) {
-  console.log("key", key);
   const data = {
     Siding: getSidingOptions(),
     Interior: getInteriorOptions(),

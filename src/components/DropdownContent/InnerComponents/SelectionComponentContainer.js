@@ -3,9 +3,15 @@ import SelectionComponent from "./SelectionComponent";
 import "./SelectionComponentContainer.css";
 import Container from "./../../Container/Container";
 import SizeContent from "../SizeContent/SizeContent";
+import { useDispatch, useSelector } from "react-redux";
+import { handleAddPrice } from "../../../actions/price";
 import { getInitialData, getPricingOptions } from "../../../utils/api";
 
-const SelectionComponentContainer = ({ type, clickEvent }) => {
+const SelectionComponentContainer = ({
+  type,
+  setPriceEvent,
+  setSquareFootageEvent,
+}) => {
   const [multiple, setMultiple] = React.useState(false);
   const [total, setTotal] = React.useState(0);
   const [totalSquareFootage, setTotalSquareFootage] = React.useState(8 * 8);
@@ -14,6 +20,7 @@ const SelectionComponentContainer = ({ type, clickEvent }) => {
   const setSquareFootageHandler = (option) => {
     setTotalSquareFootage(option.length * option.width);
     setTotal(option.price);
+    setSquareFootageEvent(option.length * option.width);
   };
 
   const setValueHandler = (e, perSquareFoot) => {
@@ -23,6 +30,7 @@ const SelectionComponentContainer = ({ type, clickEvent }) => {
     } else {
       setTotal(Number(e.target.value));
     }
+    setPriceEvent(type, 20);
   };
 
   return type === "Sizing" ? (
@@ -30,16 +38,12 @@ const SelectionComponentContainer = ({ type, clickEvent }) => {
       data={data}
       multiple={false}
       type={type}
+      setPriceEvent={setPriceEvent}
       clickEvent={setSquareFootageHandler}
     />
   ) : (
     <Container classes="SelectionComponentContainer">
       {data.map((option) => {
-        // console.log("-----", option.name, "-----");
-        // console.log(
-        //   "option.price_per_sf !== undefined",
-        //   option.price_per_sf !== undefined
-        // );
         return (
           <SelectionComponent
             key={option.id}
