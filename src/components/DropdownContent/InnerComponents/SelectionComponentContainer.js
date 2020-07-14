@@ -3,9 +3,7 @@ import SelectionComponent from "./SelectionComponent";
 import "./SelectionComponentContainer.css";
 import Container from "./../../Container/Container";
 import SizeContent from "../SizeContent/SizeContent";
-import { useDispatch, useSelector } from "react-redux";
-import { handleAddPrice } from "../../../actions/price";
-import { getInitialData, getPricingOptions } from "../../../utils/api";
+import { getInitialData } from "../../../utils/api";
 
 const SelectionComponentContainer = ({
   type,
@@ -39,7 +37,7 @@ const SelectionComponentContainer = ({
       multiple={false}
       type={type}
       setPriceEvent={setPriceEvent}
-      clickEvent={setSquareFootageHandler}
+      clickEvent={setSquareFootageEvent}
     />
   ) : (
     <Container classes="SelectionComponentContainer">

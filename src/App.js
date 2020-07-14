@@ -30,7 +30,7 @@ class App extends Component {
 
   setEstimate = () => {
     const types = this.state.types;
-    console.log("types", types);
+    // console.log("types", types);
     let estimate = 0;
     for (let type in types) {
       estimate += types[type];
@@ -39,8 +39,8 @@ class App extends Component {
     this.setState(
       {
         estimate,
-      },
-      () => console.log("this.state.estimate", this.state.estimate)
+      }
+      // () => console.log("this.state.estimate", this.state.estimate)
     );
   };
 
@@ -51,20 +51,22 @@ class App extends Component {
   }
 
   setPricing = (type, price) => {
-    console.log("setPricing");
+    // console.log("setPricing");
     const stateObj = this.state;
     stateObj.types[type] = price;
     this.setState(
       {
         ...stateObj,
-      },
-      () => console.log("state", this.state)
+      }
+      // () => console.log("state", this.state)
     );
     this.setEstimate();
   };
 
   setSquareFootageEvent = (totalSquareFootage, ppsf) => {
-    console.log("setSquareFootageEvent");
+    console.log("-----setSquareFootageEvent-----");
+    console.log("totalSquareFootage", totalSquareFootage);
+    console.log("ppsf", ppsf);
     const stateObj = this.state;
     stateObj.types["Sizing"] = totalSquareFootage * ppsf;
     stateObj[totalSquareFootage] = totalSquareFootage;
