@@ -11,6 +11,7 @@ const Dropdown = ({
   estimateValue,
   setSquareFootageEvent,
   typesValues,
+  interiorClickEvent,
 }) => {
   const [display, setDisplay] = useState(false);
 
@@ -28,6 +29,7 @@ const Dropdown = ({
             type={type}
             setPriceEvent={setPriceEvent}
             setSquareFootageEvent={setSquareFootageEvent}
+            interiorClickEvent={interiorClickEvent}
           />
         )}
       </DropdownContent>

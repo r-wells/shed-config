@@ -3,44 +3,862 @@ export const FLOORING_PSF = "5.00";
 
 let exterior = [
   {
-    id: "operable_windows_sh",
-    name: 'Operable Windows 22"-44" SH',
-    price: "560.00",
+    eight: {
+      back: [
+        {
+          image: "/B_22s_w_44s",
+        },
+        {
+          image: "/B_22s_w_s_w",
+        },
+        {
+          image: "/B_22s_w_w_s",
+        },
+        {
+          image: "/B_22s_w_s_w",
+        },
+        {
+          image: "/B_22w_44w_22w",
+        },
+        {
+          image: "/B_22w_s_44s",
+        },
+        {
+          image: "/B_22w_s_44w",
+        },
+        {
+          image: "/B_22w_s_w_s",
+        },
+        {
+          image: "/B_22w_w_44w",
+        },
+        {
+          image: "/B_44s_22s_w",
+        },
+        {
+          image: "/B_44s_s",
+        },
+        {
+          image: "/B_44s_w",
+        },
+        {
+          image: "/B_44w_22s_w",
+        },
+        {
+          image: "/B_44w_22w_w",
+        },
+        {
+          image: "/B_44w_s",
+        },
+      ],
+      front: [
+        {
+          image: "/F_22s_door",
+        },
+        {
+          image: "/F_22s_w_44s",
+        },
+        {
+          image: "/F_22s_w_s_w",
+        },
+        {
+          image: "/F_22s_w_w_s",
+        },
+        {
+          image: "/F_22w_44s_22w",
+        },
+        {
+          image: "/F_22w_44w_22w",
+        },
+        {
+          image: "/F_22w_door",
+        },
+        {
+          image: "/F_22w_s_44s",
+        },
+        {
+          image: "/F_22w_s_44w",
+        },
+        {
+          image: "/F_22w_s_w_s",
+        },
+        {
+          image: "/F_22w_w_44w",
+        },
+        {
+          image: "/F_44s_22s_w",
+        },
+        {
+          image: "/F_44s_22w_s",
+        },
+        {
+          image: "/F_44s_s",
+        },
+        {
+          image: "/F_44s_w",
+        },
+        {
+          image: "/F_44w_22s_w",
+        },
+        {
+          image: "/F_44w_22w_w",
+        },
+        {
+          image: "/F_44w_s",
+        },
+        {
+          image: "/F_door_22s",
+        },
+        {
+          image: "/F_door_22w",
+        },
+      ],
+      left: [
+        {
+          image: "/L_22s_door",
+        },
+        {
+          image: "/L_22s_w_44s",
+        },
+        {
+          image: "/L_22s_w_s_w",
+        },
+        {
+          image: "/L_22s_w_w_s",
+        },
+        {
+          image: "/L_22w_44s_22w",
+        },
+        {
+          image: "/L_22w_44w_22w",
+        },
+        {
+          image: "/L_22w_door",
+        },
+        {
+          image: "/L_22w_s_44s",
+        },
+        {
+          image: "/L_22w_s_44w",
+        },
+        {
+          image: "/L_22w_s_w_s",
+        },
+        {
+          image: "/L_22w_w_44w",
+        },
+        {
+          image: "/L_44s_22s_w",
+        },
+        {
+          image: "/L_44s_22w_s",
+        },
+        {
+          image: "/L_44s_s",
+        },
+        {
+          image: "/L_44s_w",
+        },
+        {
+          image: "/L_44w_22s_w",
+        },
+        {
+          image: "/L_44w_22w_w",
+        },
+        {
+          image: "/L_44w_s",
+        },
+        {
+          image: "/L_door_22s",
+        },
+        {
+          image: "/L_door_22w",
+        },
+      ],
+      right: [
+        {
+          image: "/R_22s_door",
+        },
+        {
+          image: "/R_22s_w_44s",
+        },
+        {
+          image: "/R_22s_w_s_w",
+        },
+        {
+          image: "/R_22s_w_w_s",
+        },
+        {
+          image: "/R_22w_44s_22w",
+        },
+        {
+          image: "/R_22w_door",
+        },
+        {
+          image: "/R_22w_s_44s",
+        },
+        {
+          image: "/R_22w_s_44w",
+        },
+        {
+          image: "/R_22w_s_w_s",
+        },
+        {
+          image: "/R_22w_w_44w",
+        },
+        {
+          image: "/R_44s_22s_w",
+        },
+        {
+          image: "/R_44s_22w_s",
+        },
+        {
+          image: "/R_44s_s",
+        },
+        {
+          image: "/R_44s_w",
+        },
+        {
+          image: "/R_44w_22s_w",
+        },
+        {
+          image: "/R_44w_22w_w",
+        },
+        {
+          image: "/R_44w_s",
+        },
+        {
+          image: "/R_door_22s",
+        },
+        {
+          image: "/R_door_22w",
+        },
+      ],
+    },
   },
   {
-    id: "operable_windows_dh",
-    name: 'Operable Windows 22"-44" DH',
-    price: "570.00",
+    ten: {
+      back: [
+        {
+          image: "/B_22s_w_s_44s",
+        },
+        {
+          image: "/B_22s_w_s_w_s",
+        },
+        {
+          image: "/B_22w_44s_s",
+        },
+        {
+          image: "/B_22w_s_w_s_w",
+        },
+        {
+          image: "/B_22w_w_s_44s",
+        },
+        {
+          image: "/B_44s_22s_44s",
+        },
+        {
+          image: "/B_44s_22s_44w",
+        },
+        {
+          image: "/B_44s_22s_w_s",
+        },
+        {
+          image: "/B_44s_22s_w_w",
+        },
+        {
+          image: "/B_44s_22w_44s",
+        },
+        {
+          image: "/B_44s_22w_44w",
+        },
+        {
+          image: "/B_44s_s_22w",
+        },
+        {
+          image: "/B_44w_22s_44s",
+        },
+        {
+          image: "/B_44w_22s_44w",
+        },
+        {
+          image: "/B_44w_22w_44s",
+        },
+        {
+          image: "/B_44w_22w_44w",
+        },
+      ],
+      front: [
+        {
+          image: "/F_22s_door_22s",
+        },
+        {
+          image: "/F_22s_door_22w",
+        },
+        {
+          image: "/F_22s_w_door",
+        },
+        {
+          image: "/F_22s_w_s_44s",
+        },
+        {
+          image: "/F_22s_w_s_w_s",
+        },
+        {
+          image: "/F_22w_44s_s",
+        },
+        {
+          image: "/F_22w_door_22s",
+        },
+        {
+          image: "/F_22w_door_22w",
+        },
+        {
+          image: "/F_22w_s_door",
+        },
+        {
+          image: "/F_22w_s_w_s_w",
+        },
+        {
+          image: "/F_22w_w_door",
+        },
+        {
+          image: "/F_22w_w_s_44s",
+        },
+        {
+          image: "/F_44s_22s_44s",
+        },
+        {
+          image: "/F_44s_22s_44w",
+        },
+        {
+          image: "/F_44s_22s_w_s",
+        },
+        {
+          image: "/F_44s_22s_w_w",
+        },
+        {
+          image: "/F_44s_22w_44s",
+        },
+        {
+          image: "/F_44s_22w_44w",
+        },
+        {
+          image: "/F_44s_door",
+        },
+        {
+          image: "/F_44s_s_22w",
+        },
+        {
+          image: "/F_44w_22s_44s",
+        },
+        {
+          image: "/F_44w_22s_44w",
+        },
+        {
+          image: "/F_44w_22w_44s",
+        },
+        {
+          image: "/F_44w_22w_44w",
+        },
+        {
+          image: "/F_44w_door",
+        },
+        {
+          image: "/F_door_22s_w",
+        },
+        {
+          image: "/F_door_22w_s",
+        },
+        {
+          image: "/F_door_22w_w",
+        },
+        {
+          image: "/F_door_44s",
+        },
+        {
+          image: "/F_door_44w",
+        },
+      ],
+      left: [
+        {
+          image: "/L_22s_44w_22s",
+        },
+        {
+          image: "/L_22s_door",
+        },
+        {
+          image: "/L_22s_w_44s",
+        },
+        {
+          image: "/L_22s_w_s_w",
+        },
+        {
+          image: "/L_22s_w_w_s",
+        },
+        {
+          image: "/L_22w_44s_22w",
+        },
+        {
+          image: "/L_22w_44w_22w",
+        },
+        {
+          image: "/L_22w_door",
+        },
+        {
+          image: "/L_22w_s_44s",
+        },
+        {
+          image: "/L_22w_s_44w",
+        },
+        {
+          image: "/L_22w_s_w_s",
+        },
+        {
+          image: "/L_22w_w_44w",
+        },
+        {
+          image: "/L_44s_22s_w",
+        },
+        {
+          image: "/L_44s_22w_s",
+        },
+        {
+          image: "/L_44s_s",
+        },
+        {
+          image: "/L_44s_w",
+        },
+        {
+          image: "/L_44w_22s_w",
+        },
+        {
+          image: "/L_44w_22w_w",
+        },
+        {
+          image: "/L_44w_s",
+        },
+        {
+          image: "/L_44w_w",
+        },
+        {
+          image: "/L_door_22s",
+        },
+        {
+          image: "/L_door_22w",
+        },
+      ],
+      right: [
+        {
+          image: "/R_22s_44w_22s",
+        },
+        {
+          image: "/R_22s_door",
+        },
+        {
+          image: "/R_22s_w_44s",
+        },
+        {
+          image: "/R_22s_w_s_w",
+        },
+        {
+          image: "/R_22s_w_w_s",
+        },
+        {
+          image: "/R_22w_44s_22w",
+        },
+        {
+          image: "/R_22w_44w_22w",
+        },
+        {
+          image: "/R_22w_door",
+        },
+        {
+          image: "/R_22w_s_44s",
+        },
+        {
+          image: "/R_22w_s_44w",
+        },
+        {
+          image: "/R_22w_s_w_s",
+        },
+        {
+          image: "/R_22w_w_44w",
+        },
+        {
+          image: "/R_44s_22s_w",
+        },
+        {
+          image: "/R_44s_22w_s",
+        },
+        {
+          image: "/R_44s_s",
+        },
+        {
+          image: "/R_44s_w",
+        },
+        {
+          image: "/R_44w_22s_w",
+        },
+        {
+          image: "/R_44w_22w_w",
+        },
+        {
+          image: "/R_44w_s",
+        },
+        {
+          image: "/R_44w_w",
+        },
+        {
+          image: "/R_door_22s",
+        },
+        {
+          image: "/R_door_22w",
+        },
+      ],
+    },
   },
   {
-    id: "operable_windows_transom",
-    name: "Operable Windows For Transom",
-    price: "805.00",
-  },
-  {
-    id: "double_door",
-    name: "Double Door",
-    price: "650.00",
-  },
-  {
-    id: "single_door",
-    name: "Single Door",
-    price: "325.00",
-  },
-  {
-    id: "garage_door",
-    name: "Garage Door",
-    price: "500.00",
-  },
-  {
-    id: "shingle_roof",
-    name: "Change from Metal to Shingle Roof",
-    price_per_sf: "0.50",
-  },
-  {
-    id: "tongue_groove_ceiling",
-    name: "Tongue and Groove Ceiling",
-    price_per_sf: "6.00",
+    twelve: {
+      back: [
+        {
+          image: "/B_22s_w_w_w_w_s",
+        },
+        {
+          image: "/B_22w_s_44s_s",
+        },
+        {
+          image: "/B_22w_s_44w_22s_w",
+        },
+        {
+          image: "/B_22w_w_44s_s",
+        },
+        {
+          image: "/B_44s_22w_w_44s",
+        },
+        {
+          image: "/B_44s_s_22s_w",
+        },
+        {
+          image: "/B_44s_s_22w_w",
+        },
+        {
+          image: "/B_44s_s_s",
+        },
+        {
+          image: "/B_44s_s_w",
+        },
+        {
+          image: "/B_44s_w_s",
+        },
+        {
+          image: "/B_44s_w_w",
+        },
+        {
+          image: "/B_44w_s_s",
+        },
+        {
+          image: "/B_44w_s_w",
+        },
+        {
+          image: "/B_44w_w_s",
+        },
+        {
+          image: "/B_44w_w_w",
+        },
+      ],
+      front: [
+        {
+          image: "/F_22s_11s_door_11s_22s",
+        },
+        {
+          image: "/F_22s_11s_door_11s_22w",
+        },
+        {
+          image: "/F_22s_door_44s",
+        },
+        {
+          image: "/F_22s_w_w_w_w_s",
+        },
+        {
+          image: "/F_22w_11s_door_11s_22s",
+        },
+        {
+          image: "/F_22w_11s_door_11s_22w",
+        },
+        {
+          image: "/F_22w_44s_door",
+        },
+        {
+          image: "/F_22w_door_22s_w",
+        },
+        {
+          image: "/F_22w_door_44s",
+        },
+        {
+          image: "/F_22w_door_44w",
+        },
+        {
+          image: "/F_22w_s_44s_s",
+        },
+        {
+          image: "/F_22w_s_44w_22s_w",
+        },
+        {
+          image: "/F_22w_s_door_22w",
+        },
+        {
+          image: "/F_22w_w_44s_s",
+        },
+        {
+          image: "/F_44s_22s_door",
+        },
+        {
+          image: "/F_44s_22w_door",
+        },
+        {
+          image: "/F_44s_22w_w_44s",
+        },
+        {
+          image: "/F_44s_door_22s",
+        },
+        {
+          image: "/F_44s_door_22w",
+        },
+        {
+          image: "/F_44s_s_22s_w",
+        },
+        {
+          image: "/F_44s_s_22w_w",
+        },
+        {
+          image: "/F_44s_s_s",
+        },
+        {
+          image: "/F_44s_s_w",
+        },
+        {
+          image: "/F_44s_w_s",
+        },
+        {
+          image: "/F_44s_w_w",
+        },
+        {
+          image: "/F_44w_22s_door",
+        },
+        {
+          image: "/F_44w_door_22w",
+        },
+        {
+          image: "/F_44w_s_s",
+        },
+        {
+          image: "/F_44w_s_w",
+        },
+        {
+          image: "/F_44w_w_s",
+        },
+        {
+          image: "/F_44w_w_w",
+        },
+        {
+          image: "/F_door_22s_44s",
+        },
+        {
+          image: "/F_door_22s_44w",
+        },
+        {
+          image: "/F_door_22w_44s",
+        },
+        {
+          image: "/F_door_44s_22w",
+        },
+      ],
+      left: [
+        {
+          image: "/L_22s_door_22s",
+        },
+        {
+          image: "/L_22s_door_22w",
+        },
+        {
+          image: "/L_22s_w_door",
+        },
+        {
+          image: "/L_22s_w_s_44s",
+        },
+        {
+          image: "/L_22s_w_s_w_s",
+        },
+        {
+          image: "/L_22w_44s_s",
+        },
+        {
+          image: "/L_22w_door_22s",
+        },
+        {
+          image: "/L_22w_door_22w",
+        },
+        {
+          image: "/L_22w_s_door",
+        },
+        {
+          image: "/L_22w_s_w_s_w",
+        },
+        {
+          image: "/L_22w_w_door",
+        },
+        {
+          image: "/L_22w_w_s_44s",
+        },
+        {
+          image: "/L_44s_22s_44s",
+        },
+        {
+          image: "/L_44s_22s_44w",
+        },
+        {
+          image: "/L_44s_22s_w_s",
+        },
+        {
+          image: "/L_44s_22s_w_w",
+        },
+        {
+          image: "/L_44s_22w_44s",
+        },
+        {
+          image: "/L_44s_22w_44w",
+        },
+        {
+          image: "/L_44s_door",
+        },
+        {
+          image: "/L_44s_s_22w",
+        },
+        {
+          image: "/L_44w_22s_44s",
+        },
+        {
+          image: "/L_44w_22s_44w",
+        },
+        {
+          image: "/L_44w_22w_44s.",
+        },
+        {
+          image: "/L_44w_22w_44w",
+        },
+        {
+          image: "/L_44w_door",
+        },
+        {
+          image: "/L_door_22s_w",
+        },
+        {
+          image: "/L_door_22w_s",
+        },
+        {
+          image: "/L_door_22w_w",
+        },
+        {
+          image: "/L_door_44s",
+        },
+        {
+          image: "/L_door_44w",
+        },
+      ],
+      right: [
+        {
+          image: "/R_22s_door_22s",
+        },
+        {
+          image: "/R_22s_door_22w",
+        },
+        {
+          image: "/R_22s_w_door",
+        },
+        {
+          image: "/R_22s_w_s_44s",
+        },
+        {
+          image: "/R_22s_w_s_w_s",
+        },
+        {
+          image: "/R_22w_44s_s",
+        },
+        {
+          image: "/R_22w_door_22s",
+        },
+        {
+          image: "/R_22w_door_22w",
+        },
+        {
+          image: "/R_22w_s_door",
+        },
+        {
+          image: "/R_22w_s_w_s_w",
+        },
+        {
+          image: "/R_22w_w_door",
+        },
+        {
+          image: "/R_22w_w_s_44s",
+        },
+        {
+          image: "/R_44s_22s_44s",
+        },
+        {
+          image: "/R_44s_22s_44w",
+        },
+        {
+          image: "/R_44s_22s_w_s",
+        },
+        {
+          image: "/R_44s_22s_w_w",
+        },
+        {
+          image: "/R_44s_22w_44s",
+        },
+        {
+          image: "/R_44s_22w_44w",
+        },
+        {
+          image: "/R_44s_door",
+        },
+        {
+          image: "/R_44s_s_22w",
+        },
+        {
+          image: "/R_44w_22s_44s",
+        },
+        {
+          image: "/R_44w_22s_44w",
+        },
+        {
+          image: "/R_44w_22w_44s",
+        },
+        {
+          image: "/R_44w_22w_44w",
+        },
+        {
+          image: "/R_44w_door",
+        },
+        {
+          image: "/R_door_22s_w",
+        },
+        {
+          image: "/R_door_22w_s",
+        },
+        {
+          image: "/R_door_22w_w",
+        },
+        {
+          image: "/R_door_44s",
+        },
+        {
+          image: "/R_door_44w",
+        },
+      ],
+    },
   },
 ];
 

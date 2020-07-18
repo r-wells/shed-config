@@ -35,7 +35,6 @@ class App extends Component {
     for (let type in types) {
       estimate += types[type];
     }
-    console.log("estimate", estimate);
     this.setState(
       {
         estimate,
@@ -57,10 +56,18 @@ class App extends Component {
     this.setState(
       {
         ...stateObj,
-      }
-      // () => console.log("state", this.state)
+      },
+      () => console.log("state", this.state)
     );
     this.setEstimate();
+  };
+
+  setInteriorPricing = (price) => {
+    if (this.state.types.Interior === 0) {
+      this.setPricing("Interior", price);
+    } else {
+      this.setPricing("Interior", 0);
+    }
   };
 
   setSquareFootageEvent = (totalSquareFootage, ppsf) => {
@@ -79,6 +86,10 @@ class App extends Component {
     this.setEstimate();
   };
 
+  checkoutOnClick = () => {
+    console.log("Checkout");
+  };
+
   render() {
     const { inputTypes } = this.state;
     return (
@@ -91,11 +102,15 @@ class App extends Component {
           <Container key="3" classes="RightContainer">
             <Container key="4" classes="buttonContainer">
               <Button
-                onClick={"#"}
+                onClick={this.checkoutOnClick}
                 buttonText="Add To Wishlist"
                 classes={"Button"}
               />
-              <Button onClick={"#"} buttonText="Checkout" classes={"Button"} />
+              <Button
+                onClick={this.checkoutOnClick}
+                buttonText="Checkout"
+                classes={"Button"}
+              />
             </Container>
             <Container key="5" classes="DropdownContainer">
               {inputTypes.map((input) => {
@@ -106,6 +121,7 @@ class App extends Component {
                     innerText={`Choose Your ${input}`}
                     type={input}
                     key={input}
+                    interiorClickEvent={this.setInteriorPricing}
                   />
                 );
               })}
