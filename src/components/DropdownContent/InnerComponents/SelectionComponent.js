@@ -10,7 +10,14 @@ const SelectionComponent = ({
   value,
   multiple,
   perSquareFoot,
+  updateSizing,
 }) => {
+  console.log("type in SC", type);
+
+  const setSizing = (size) => {
+    updateSizing(size);
+  };
+
   return (
     <div className="SelectionComponent">
       <img src={Image} />

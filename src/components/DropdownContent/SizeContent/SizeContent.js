@@ -4,7 +4,14 @@ import "../InnerComponents/SelectionComponentContainer.css";
 import Container from "./../../Container/Container";
 import { FLOORING_PSF } from "./../../../utils/_DATA";
 
-const SizeContent = ({ data, type, clickEvent, multiple, setPriceEvent }) => {
+const SizeContent = ({
+  data,
+  type,
+  clickEvent,
+  multiple,
+  setPriceEvent,
+  updateSizing,
+}) => {
   return (
     <Container classes="SelectionComponentContainer">
       {data.map((option) => {
@@ -21,6 +28,7 @@ const SizeContent = ({ data, type, clickEvent, multiple, setPriceEvent }) => {
             price={option.price_per_sf * option.totalSquareFootage}
             type={type}
             multiple={multiple}
+            updateSizing={updateSizing}
           />
         );
       })}

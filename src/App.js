@@ -26,6 +26,7 @@ class App extends Component {
       Services: 0,
     },
     estimate: 0,
+    sizing: "eight",
   };
 
   setEstimate = () => {
@@ -43,11 +44,16 @@ class App extends Component {
     );
   };
 
+  //Set initial sizing to 8x8
   componentDidMount() {
-    const sizing = "Sizing";
-    // console.log(this.state[sizing]);
-    // console.log("Pricing", Pricing["Size"]);
+    this.updateSizing("eight");
   }
+
+  updateSizing = (sizing) => {
+    this.setState({
+      sizing,
+    });
+  };
 
   setPricing = (type, price) => {
     // console.log("setPricing");
@@ -71,9 +77,6 @@ class App extends Component {
   };
 
   setSquareFootageEvent = (totalSquareFootage, ppsf) => {
-    console.log("-----setSquareFootageEvent-----");
-    console.log("totalSquareFootage", totalSquareFootage);
-    console.log("ppsf", ppsf);
     const stateObj = this.state;
     stateObj.types["Sizing"] = totalSquareFootage * ppsf;
     stateObj[totalSquareFootage] = totalSquareFootage;
@@ -122,6 +125,7 @@ class App extends Component {
                     type={input}
                     key={input}
                     interiorClickEvent={this.setInteriorPricing}
+                    updateSizing={this.updateSizing}
                   />
                 );
               })}

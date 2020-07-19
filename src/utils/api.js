@@ -11,6 +11,7 @@ import {
   getInteriorOptions,
   getSidingOptions,
   getExteriorOptions,
+  returnPricingOfSize,
 } from "./_DATA";
 
 export function getInitialData(key) {
@@ -34,4 +35,8 @@ export function getPricingOptions(key) {
     Services: getServicesPrice,
     Colors: getColorPrice,
   };
+}
+
+export function getPriceOfSize(sizing) {
+  return returnPricingOfSize(sizing);
 }

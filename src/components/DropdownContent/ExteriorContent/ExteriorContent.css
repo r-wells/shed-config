@@ -10,9 +10,10 @@
 }
 
 .ExteriorButton:hover {
-  color: #fff;
-  border-radius: 5px;
   background-color: #204d88;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
   text-decoration: none;
 }
 

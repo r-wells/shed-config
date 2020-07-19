@@ -864,7 +864,7 @@ let exterior = [
 
 let size = [
   {
-    id: "eighteight",
+    id: "eight",
     name: "8x8",
     totalSquareFootage: 8 * 8,
     length: 8,
@@ -872,7 +872,7 @@ let size = [
     price_per_sf: FLOORING_PSF,
   },
   {
-    id: "teneight",
+    id: "ten",
     name: "10x8",
     totalSquareFootage: 10 * 8,
     length: 10,
@@ -880,7 +880,7 @@ let size = [
     price_per_sf: FLOORING_PSF,
   },
   {
-    id: "twelveten",
+    id: "twelve",
     name: "12x10",
     totalSquareFootage: 12 * 10,
     length: 12,
@@ -1070,4 +1070,12 @@ export const getExteriorPrice = (key, fixed) => {
 
 export function getExteriorOptions() {
   return exterior;
+}
+
+export function returnPricingOfSize(size) {
+  return size.filter((option) => {
+    if (option.id === size) {
+      return option;
+    }
+  });
 }
