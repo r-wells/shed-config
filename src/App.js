@@ -39,20 +39,34 @@ class App extends Component {
     this.setState(
       {
         estimate,
-      }
-      // () => console.log("this.state.estimate", this.state.estimate)
+      },
+      () => console.log("this.state", this.state)
     );
   };
 
   //Set initial sizing to 8x8
   componentDidMount() {
-    this.updateSizing("eight");
+    const stateObj = this.state;
+    stateObj.types.Sizing = 320;
+    this.setState(
+      {
+        ...stateObj,
+      },
+      () => this.setEstimate()
+    );
   }
 
-  updateSizing = (sizing) => {
-    this.setState({
-      sizing,
-    });
+  updateSizing = (sizing, value) => {
+    console.log("sizing in updatesizing", sizing);
+    console.log("value in updatesizing", value);
+    if (this.state.sizing === sizing) {
+      return;
+    } else {
+      const prevState = this.state;
+      prevState.types.Sizing = value;
+      prevState.sizing = sizing;
+      this.setState({ ...prevState }, () => this.setEstimate());
+    }
   };
 
   setPricing = (type, price) => {
@@ -62,8 +76,8 @@ class App extends Component {
     this.setState(
       {
         ...stateObj,
-      },
-      () => console.log("state", this.state)
+      }
+      // () => console.log("state", this.state)
     );
     this.setEstimate();
   };
@@ -83,8 +97,8 @@ class App extends Component {
     this.setState(
       {
         stateObj,
-      },
-      () => console.log("state in set square footage event", this.state)
+      }
+      // () => console.log("state in set square footage event", this.state)
     );
     this.setEstimate();
   };
@@ -94,7 +108,7 @@ class App extends Component {
   };
 
   render() {
-    const { inputTypes } = this.state;
+    const { inputTypes, sizing } = this.state;
     return (
       <div className="App">
         <Container key="1" classes="AppContainer">
@@ -126,6 +140,7 @@ class App extends Component {
                     key={input}
                     interiorClickEvent={this.setInteriorPricing}
                     updateSizing={this.updateSizing}
+                    size={sizing}
                   />
                 );
               })}

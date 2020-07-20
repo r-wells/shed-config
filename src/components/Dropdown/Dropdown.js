@@ -13,6 +13,7 @@ const Dropdown = ({
   typesValues,
   interiorClickEvent,
   updateSizing,
+  size,
 }) => {
   const [display, setDisplay] = useState(false);
 
@@ -32,6 +33,7 @@ const Dropdown = ({
             setSquareFootageEvent={setSquareFootageEvent}
             interiorClickEvent={interiorClickEvent}
             updateSizing={updateSizing}
+            size={size}
           />
         )}
       </DropdownContent>

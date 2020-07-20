@@ -11,11 +11,13 @@ const SelectionComponent = ({
   multiple,
   perSquareFoot,
   updateSizing,
+  size,
 }) => {
-  console.log("type in SC", type);
+  console.log("value in SC", value);
 
-  const setSizing = (size) => {
-    updateSizing(size);
+  const setSizing = (size, value) => {
+    console.log("setSizing", size);
+    updateSizing(size, value);
   };
 
   return (
@@ -34,7 +36,12 @@ const SelectionComponent = ({
           type="radio"
           name={type}
           value={value}
-          onClick={(e) => clickEvent(e, perSquareFoot)}
+          // checked={true}
+          onClick={
+            type === "Sizing"
+              ? () => setSizing(size, value)
+              : (e) => clickEvent(e, perSquareFoot)
+          }
         />
       )}
       <p className="SelectionComponentPrice">${price}</p>

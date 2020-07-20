@@ -3,11 +3,16 @@ import Container from "../../Container/Container";
 import "./ExteriorContent.css";
 import Button from "../../Button/Button";
 import ExteriorInnerContent from "./ExteriorInnerContent";
+import { getPriceOfSize } from "../../../utils/api";
 
-const ExteriorContent = ({ clickEvent, data }) => {
-  const [displayedSide, setDisplayedSide] = useState("Front");
+const postsPerPage = 6;
 
-  const sides = ["Front", "Back", "Left", "Right"];
+const ExteriorContent = ({ clickEvent, data, size, type }) => {
+  const [displayedSide, setDisplayedSide] = useState("front");
+  const [prevIndex, setPrevIndex] = useState(0);
+  const sizeData = getPriceOfSize(size)[0].data;
+
+  const sides = ["front", "back", "left", "right"];
 
   const changeDisplayedSide = (side) => {
     setDisplayedSide(side);
@@ -27,7 +32,13 @@ const ExteriorContent = ({ clickEvent, data }) => {
         })}
       </Container>
       <Container classes="ExteriorInnerContentContainer">
-        <ExteriorInnerContent data={data} displayedSide={displayedSide} />
+        <ExteriorInnerContent
+          data={sizeData[displayedSide]}
+          displayedSide={displayedSide}
+          type={type}
+          size={size}
+          clickEvent={clickEvent}
+        />
       </Container>
     </Container>
   );

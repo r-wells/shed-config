@@ -13,6 +13,7 @@ const SelectionComponentContainer = ({
   setSquareFootageEvent,
   interiorClickEvent,
   updateSizing,
+  size,
 }) => {
   const [multiple, setMultiple] = React.useState(false);
   const [total, setTotal] = React.useState(0);
@@ -34,7 +35,6 @@ const SelectionComponentContainer = ({
     }
     setPriceEvent(type, 20);
   };
-  console.log("type", type);
   function getContent(type) {
     if (type === "Sizing") {
       return (
@@ -45,12 +45,20 @@ const SelectionComponentContainer = ({
           setPriceEvent={setPriceEvent}
           clickEvent={setSquareFootageEvent}
           updateSizing={updateSizing}
+          size={size}
         />
       );
     } else if (type === "Interior") {
       return <InteriorContent clickEvent={interiorClickEvent} />;
     } else if (type === "Exterior") {
-      return <ExteriorContent data={data} />;
+      return (
+        <ExteriorContent
+          clickEvent={setPriceEvent}
+          type={type}
+          size={size}
+          data={data}
+        />
+      );
     } else {
       return (
         <Container classes="SelectionComponentContainer">

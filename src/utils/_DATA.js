@@ -3,7 +3,8 @@ export const FLOORING_PSF = "5.00";
 
 let exterior = [
   {
-    eight: {
+    size: "eight",
+    data: {
       back: [
         {
           image: "/B_22s_w_44s",
@@ -237,7 +238,8 @@ let exterior = [
     },
   },
   {
-    ten: {
+    size: "ten",
+    data: {
       back: [
         {
           image: "/B_22s_w_s_44s",
@@ -519,7 +521,8 @@ let exterior = [
     },
   },
   {
-    twelve: {
+    size: "twelve",
+    data: {
       back: [
         {
           image: "/B_22s_w_w_w_w_s",
@@ -1072,10 +1075,11 @@ export function getExteriorOptions() {
   return exterior;
 }
 
-export function returnPricingOfSize(size) {
-  return size.filter((option) => {
-    if (option.id === size) {
-      return option;
+export function returnPricingOfSize(sizing) {
+  return exterior.filter((option) => {
+    if (option.size === sizing) {
+      return option.data;
+      // return option.data;
     }
   });
 }

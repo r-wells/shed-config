@@ -11,16 +11,25 @@ const SizeContent = ({
   multiple,
   setPriceEvent,
   updateSizing,
+  size,
 }) => {
+  console.log("sizecontent data", data);
+  let scValue;
+  const calculateValue = (option) => {
+    if (type === "Sizing") {
+      return option.totalSquareFootage * Number(option.price_per_sf);
+    } else {
+      return option.price ? Number(option.price) : Number(option.price_per_sf);
+    }
+  };
+
   return (
     <Container classes="SelectionComponentContainer">
       {data.map((option) => {
         return (
           <SelectionComponent
             key={option.id}
-            value={
-              option.price ? Number(option.price) : Number(option.price_per_sf)
-            }
+            value={calculateValue(option)}
             clickEvent={() =>
               clickEvent(option.totalSquareFootage, FLOORING_PSF)
             }
@@ -29,6 +38,7 @@ const SizeContent = ({
             type={type}
             multiple={multiple}
             updateSizing={updateSizing}
+            size={option.id}
           />
         );
       })}
