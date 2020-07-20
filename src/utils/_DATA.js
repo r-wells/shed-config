@@ -983,14 +983,49 @@ let services = [
 
 let colors = [
   {
-    id: "blue",
-    name: "Blue",
-    price: "500.00",
+    id: "green",
+    name: "Green",
+    hexcode: "#c8e4c5",
   },
   {
-    id: "red",
-    name: "Red",
-    price: "500.00",
+    id: "juneberry",
+    name: "Juneberry",
+    hexcode: "#864258",
+  },
+  {
+    id: "naval",
+    name: "Naval",
+    hexcode: "#2e3d4c",
+  },
+  {
+    id: "mysticshade",
+    name: "Mystic Shade",
+    hexcode: "#b0aaab",
+  },
+  {
+    id: "rockcandy",
+    name: "Rock Candy",
+    hexcode: "#dee2e0",
+  },
+  {
+    id: "sand",
+    name: "Sand",
+    hexcode: "#d4c5ba",
+  },
+  {
+    id: "sleepyblue",
+    name: "Sleepy Blue",
+    hexcode: "#bacacc",
+  },
+  {
+    id: "software",
+    name: "Software",
+    hexcode: "#808586",
+  },
+  {
+    id: "tassel",
+    name: "Tassel",
+    hexcode: "#c78945",
   },
 ];
 

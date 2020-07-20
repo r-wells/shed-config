@@ -12,10 +12,10 @@ const ExteriorInnerContent = ({
   size,
 }) => {
   const [displayedData, setDisplayedData] = useState();
-  console.log("data", data);
+  // console.log("data", data);
 
   const setDisplayedItems = () => {
-    console.log("engage in setDisplayedItems");
+    // console.log("engage in setDisplayedItems");
   };
   return (
     <Container>

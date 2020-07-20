@@ -27,6 +27,18 @@ class App extends Component {
     },
     estimate: 0,
     sizing: "eight",
+    selectedColorHexCode: "#c8e4c5",
+  };
+
+  setSelectedColor = (color) => {
+    const stateObj = this.state;
+    stateObj.selectedColorHexCode = color;
+    this.setState(
+      {
+        stateObj,
+      },
+      () => console.log("this.state", this.state)
+    );
   };
 
   setEstimate = () => {
@@ -141,6 +153,7 @@ class App extends Component {
                     interiorClickEvent={this.setInteriorPricing}
                     updateSizing={this.updateSizing}
                     size={sizing}
+                    setSelectedColor={this.setSelectedColor}
                   />
                 );
               })}

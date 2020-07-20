@@ -14,6 +14,7 @@ const Dropdown = ({
   interiorClickEvent,
   updateSizing,
   size,
+  setSelectedColor,
 }) => {
   const [display, setDisplay] = useState(false);
 
@@ -34,6 +35,7 @@ const Dropdown = ({
             interiorClickEvent={interiorClickEvent}
             updateSizing={updateSizing}
             size={size}
+            setSelectedColor={setSelectedColor}
           />
         )}
       </DropdownContent>

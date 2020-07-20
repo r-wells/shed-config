@@ -14,10 +14,12 @@ const SelectionComponentContainer = ({
   interiorClickEvent,
   updateSizing,
   size,
+  setSelectedColor,
 }) => {
   const [multiple, setMultiple] = React.useState(false);
   const [total, setTotal] = React.useState(0);
   const [totalSquareFootage, setTotalSquareFootage] = React.useState(8 * 8);
+  const [color, setColor] = React.useState("#c8e4c5");
   const data = getInitialData(type);
 
   const setSquareFootageHandler = (option) => {
@@ -26,7 +28,11 @@ const SelectionComponentContainer = ({
     setSquareFootageEvent(option.length * option.width);
   };
 
-  const setValueHandler = (e, perSquareFoot) => {
+  const setValueHandler = (e, perSquareFoot, color) => {
+    if (color !== null) {
+      setColor(color);
+      setSelectedColor(color);
+    }
     const price = Number(e.target.value);
     if (perSquareFoot) {
       setTotal(price * totalSquareFootage);
@@ -77,6 +83,7 @@ const SelectionComponentContainer = ({
                 type={type}
                 multiple={multiple}
                 perSquareFoot={option.price_per_sf !== undefined}
+                color={type === "Colors" ? option.hexcode : null}
               />
             );
           })}

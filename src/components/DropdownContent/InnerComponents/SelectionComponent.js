@@ -12,17 +12,25 @@ const SelectionComponent = ({
   perSquareFoot,
   updateSizing,
   size,
+  color,
 }) => {
-  console.log("value in SC", value);
-
   const setSizing = (size, value) => {
-    console.log("setSizing", size);
     updateSizing(size, value);
   };
 
+  const colorDivStyles = {
+    width: "65px",
+    height: "65px",
+    border: "1px solid black",
+    backgroundColor: color,
+    margin: "0 auto",
+  };
+
+  const priceValue = "$" + price;
+
   return (
     <div className="SelectionComponent">
-      <img src={Image} />
+      {type === "Colors" ? <div style={colorDivStyles} /> : <img src={Image} />}
       <label className="SelectionComponentLabel">{label}</label>
       {multiple ? (
         <input
@@ -36,15 +44,16 @@ const SelectionComponent = ({
           type="radio"
           name={type}
           value={value}
-          // checked={true}
           onClick={
             type === "Sizing"
               ? () => setSizing(size, value)
-              : (e) => clickEvent(e, perSquareFoot)
+              : (e) => clickEvent(e, perSquareFoot, color)
           }
         />
       )}
-      <p className="SelectionComponentPrice">${price}</p>
+      <p className="SelectionComponentPrice">
+        {type !== "Colors" && priceValue}
+      </p>
     </div>
   );
 };
